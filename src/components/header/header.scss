@@ -1,0 +1,34 @@
+@import '../../global.scss';
+
+header{
+    display:flex;
+    padding: $grid-gutter;
+    justify-content:center;
+    align-items: center;
+    font-size: $font-size-m;
+}
+.flashDealBadge{
+    background:$brandRed;
+    padding:$grid-gutter-half;
+    border-radius: 4px;
+    font-weight: 700;
+    line-height: 28px;
+    color:$white;
+    text-transform: uppercase;
+    margin-right:$grid-gutter;
+}
+.callToAction{
+    font-weight: $font-weight-bold;
+    margin:0;
+   
+    span{
+        font-weight:$font-weight-normal;
+        border-right: 1px solid #eee;
+        padding-right:$grid-gutter;
+    }
+    a{
+        padding-left:$grid-gutter;
+        font-size: $font-size-s;
+    }
+    
+}

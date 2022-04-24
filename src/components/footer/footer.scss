@@ -1,0 +1,23 @@
+@import '../../global.scss';
+
+footer {
+    display: flex;
+    background-color: $brandBlue;
+    justify-content: center;
+    > ul{
+        list-style-type: none;
+        padding:$grid-gutter;
+        margin:0;
+        display: flex;
+        gap: 16px;
+        a, a:hover {
+            color: #fff;
+            text-decoration:none;
+        }
+        a{
+            font-size: $font-size-s;
+        }
+        
+    }
+    
+}

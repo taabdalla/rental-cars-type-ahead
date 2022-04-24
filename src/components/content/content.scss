@@ -1,0 +1,34 @@
+@import '../../global.scss';
+
+.hero-container-gradient {
+    background: -webkit-gradient(linear, left top, left bottom, from(#1879ca), to(rgba(24, 121, 202, 0)));
+    background: linear-gradient($brandBlue, rgba(24, 121, 202, 0));
+  }
+  
+  .hero-container {
+    min-height: 500px;
+    background-image: url(https://cdn2.rcstatic.com/com.rentalcars.185492029745.eu-west-1.web.prod.static-live/images/landing-pages/home/background-large.jpg);
+    background-position: 50%;
+    background-size: cover;
+  
+    h1 {
+      padding-top: $grid-gutter-doubled;
+      font-size: $font-size-xxl;
+      line-height: 52px;
+      color: $white;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  .search-bar-container{
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    margin-top:$grid-gutter-doubled;
+    .search-input{
+        height: 64px;
+        padding:32px 32px 32px 44px;
+        border:4px solid #febb02;
+        border-radius: 8px;
+    }
+}

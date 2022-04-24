@@ -1,0 +1,85 @@
+
+//Each of these can be moved into individual files and importe here
+
+//colors 
+$brandRed:#d4111e;
+$brandBlue:#1879ca;
+$brandYellow:#ffb700;
+$white:#fff;
+
+// Fonts
+$font-size-default: 16px;
+$font-size-xs: 12px;
+$font-size-s: 14px;
+$font-size-m: 20px;
+$font-size-l: 24px;
+$font-size-xl: 32px;
+$font-size-xxl: 40px;
+$font-size-xxxl: 64px;
+$font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+$font-weight-normal: normal;
+$font-weight-bold: 700;
+
+//layout
+$grid-gutter: 16px;
+$grid-gutter-half: $grid-gutter / 2;
+$grid-gutter-doubled: $grid-gutter * 2;
+$grid-gutter-large: 24px;
+$grid-gutter-small: $grid-gutter - 4;
+
+//reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  // prevents devices changing the size of text when switching between landscape and portrait mode
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+input,
+button,
+textarea,
+select,
+option {
+  background-color: $white;
+  font-family: $font-family;
+  font-size: $font-size-default;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  font-weight: $font-weight-normal;
+  letter-spacing: normal;
+  margin: 0;
+  padding: 0;
+  text-rendering: optimizeSpeed;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+a {
+  -webkit-box-orient: vertical;
+  color: $brandBlue;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body,button,h1,h2,h3,h4,h5,h6,input,optgroup,select,textarea {
+  font-family: $font-family;
+}
+
+
