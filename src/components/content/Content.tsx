@@ -1,4 +1,5 @@
 import React from 'react';
+import Typeahead from '../typeahead/Typeahead';
 import './content.scss';
 const Hero: React.FC = (): JSX.Element => {
   return (
@@ -7,18 +8,7 @@ const Hero: React.FC = (): JSX.Element => {
           <div className='container'>
             <h1>Car Hire – Search, Compare & Save</h1>
 
-            <div className="search-bar-container">
-      <input className='search-input'
-        name="typeAheadInputField"
-        type="text"
-        placeholder='Pick-up Location'
-        autoComplete="off"
-      // onKeyDown={keyboardEventHandler}
-      // onBlur={onInputBlurHandler}
-      // onChange={onInputChangeHandler}
-      // onFocus={onInputFocusHandler}
-      />
-      </div>
+            <Typeahead/>
           </div>
         </div>
       </div>

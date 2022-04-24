@@ -5,7 +5,10 @@
 $brandRed:#d4111e;
 $brandBlue:#1879ca;
 $brandYellow:#ffb700;
+$brandOrange:#ff8000;
+$brandGreen:#008009;
 $white:#fff;
+$dark:#262626;
 
 // Fonts
 $font-size-default: 16px;
@@ -26,6 +29,7 @@ $grid-gutter-half: $grid-gutter / 2;
 $grid-gutter-doubled: $grid-gutter * 2;
 $grid-gutter-large: 24px;
 $grid-gutter-small: $grid-gutter - 4;
+$border-radius: 8px;
 
 //reset
 *,
@@ -51,7 +55,7 @@ input,
 button,
 textarea,
 select,
-option {
+option, p {
   background-color: $white;
   font-family: $font-family;
   font-size: $font-size-default;

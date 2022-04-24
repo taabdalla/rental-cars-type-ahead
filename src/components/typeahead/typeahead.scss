@@ -1,0 +1,49 @@
+@import '../../global.scss';
+
+.search-bar-container{
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    .search-input{
+        height: 64px;
+        padding:32px 32px 32px 44px;
+        border:4px solid $brandYellow;
+        border-radius: $border-radius;
+    }
+}
+.search-results{
+    background: $white;
+    padding:0 $grid-gutter-small;
+    border-radius:4px;
+    list-style-type:none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 72px;
+    li{
+        padding:$grid-gutter-small;
+        display:flex;
+        align-items: center;
+        .badge{
+            border-radius:4;
+            padding:6px $grid-gutter;
+            background:$brandBlue;
+            min-width:75px;
+        }
+        .airport{
+            background:$brandOrange;
+            color:$dark;
+        }
+        .district{
+            background-color:$brandGreen;
+        }
+        div{
+            margin-left:$grid-gutter;
+            p{
+                font-size: $font-size-s;
+                line-height: 18px;
+            }
+        }
+        
+    }
+}
