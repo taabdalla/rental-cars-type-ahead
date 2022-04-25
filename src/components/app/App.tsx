@@ -30,8 +30,8 @@ const footerItems: FooterLink[] = [
     href: 'https://www.rentalcars.com/PrivacyPolicy.do',
   },
   {
-    text: 'How we work',
-    href: 'https://www.rentalcars.com/PrivacyPolicy.do',
+    text: 'Supply Partner Enquiry and Marketplace',
+    href: 'https://www.rentalcars.com/',
   },
 ]
 const App: React.FC = (): JSX.Element => {
