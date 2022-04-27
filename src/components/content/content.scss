@@ -1,4 +1,4 @@
-@import '../../global.scss';
+@import '../../styles/global.scss';
 
 .hero-container-gradient {
     background: -webkit-gradient(linear, left top, left bottom, from(#1879ca), to(rgba(24, 121, 202, 0)));
@@ -12,11 +12,12 @@
     background-size: cover;
   
     h1 {
-      padding: $grid-gutter-doubled 0;
-      margin:0;
-      font-size: $font-size-xxl;
-      line-height: 52px;
-      color: $white;
-      font-weight: $font-weight-bold;
+      @include loud-title;
     }
   }
+.content{
+  max-width: 960px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}

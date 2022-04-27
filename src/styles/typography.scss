@@ -1,0 +1,11 @@
+
+//typography
+@mixin loud-title {
+    font-size: $font-size-xxl;
+    line-height: 48px;
+    letter-spacing: 0.1px;
+    font-weight: $font-weight-bold;
+    padding: $grid-gutter-doubled*3 0 $grid-gutter-doubled 0;
+    color: $white;
+    margin:0;
+  }

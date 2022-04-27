@@ -1,36 +1,3 @@
-
-//Each of these can be moved into individual files and importe here
-
-//colors 
-$brandRed:#d4111e;
-$brandBlue:#1879ca;
-$brandYellow:#ffb700;
-$brandOrange:#ff8000;
-$brandGreen:#008009;
-$white:#fff;
-$dark:#262626;
-
-// Fonts
-$font-size-default: 16px;
-$font-size-xs: 12px;
-$font-size-s: 14px;
-$font-size-m: 20px;
-$font-size-l: 24px;
-$font-size-xl: 32px;
-$font-size-xxl: 40px;
-$font-size-xxxl: 64px;
-$font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-$font-weight-normal: normal;
-$font-weight-bold: 700;
-
-//layout
-$grid-gutter: 16px;
-$grid-gutter-half: $grid-gutter / 2;
-$grid-gutter-doubled: $grid-gutter * 2;
-$grid-gutter-large: 24px;
-$grid-gutter-small: $grid-gutter - 4;
-$border-radius: 8px;
-
 //reset
 *,
 *::before,
@@ -85,5 +52,3 @@ a {
 body,button,h1,h2,h3,h4,h5,h6,input,optgroup,select,textarea {
   font-family: $font-family;
 }
-
-

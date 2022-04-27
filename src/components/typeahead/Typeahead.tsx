@@ -1,11 +1,12 @@
-import React, { useState, ChangeEvent, useEffect } from "react";
+import React, { useState, ChangeEvent } from "react";
 import "./typeahead.scss";
 import { getLocations, Location } from "../../api/locationsClient";
+import SearchIcon from "../../icons/SearchIcon";
 
 const Typeahead: React.FC = (): JSX.Element => {
   const [locations, setLocations] = useState<Location[] | null>(null);
   const [inputVal, setInputVal] = useState<string>("");
-  const [showSuggestions, setShowSuggestions] = useState<boolean>(Boolean);
+  const [showSuggestions, setShowSuggestions] = useState<boolean>(false);
   const NUMBER_OF_RESULTS_TO_SHOW = 6;
 
   const mapPlaceTypeToBandge = (placeType: string): string => {
@@ -27,12 +28,16 @@ const Typeahead: React.FC = (): JSX.Element => {
     const target = (e as ChangeEvent<HTMLInputElement>).target;
     const { value } = target;
     setInputVal(value);
+    
     if (value.length > 1) {
-      getLocations(value).then((locations: Location[]) => {
-        setLocations(locations.slice(0, NUMBER_OF_RESULTS_TO_SHOW));
-        setShowSuggestions(true);
-      });
-    } else {
+      getLocations(value)
+        .then((locations: Location[] | null ) => {
+          setLocations(locations && locations.slice(0, NUMBER_OF_RESULTS_TO_SHOW));
+          setShowSuggestions(true);
+        })
+        .catch(() => console.log('error'));
+    } 
+    if (value.length === 0) {
       setLocations(null);
     }
   };
@@ -42,13 +47,13 @@ const Typeahead: React.FC = (): JSX.Element => {
       setShowSuggestions(true);
     }
   };
+  
 
   const handleLocationClick = (location: Location) => {
     const { name, iata, city, region } = location;
 
-    const displayName = `${name}${iata ? `, (${iata})` : ""}${
-      city ? `, ${city}` : ""
-    }${region ? `, ${region}` : ""}`;
+    const displayName = `${name}${iata ? `, (${iata})` : ""}${city ? `, ${city}` : ""
+      }${region ? `, ${region}` : ""}`;
 
     setInputVal(displayName);
     setShowSuggestions(false);
@@ -56,9 +61,12 @@ const Typeahead: React.FC = (): JSX.Element => {
 
   return (
     <div className="search-bar-container">
+      <SearchIcon className='search-icon'/>
+      <label className="visually-hidden" htmlFor="typeAheadInputField">Pick-up Location</label>
       <input
         className="search-input"
-        name="typeAheadInputField"
+        id="typeAheadInputField"
+        name="inputField"
         type="text"
         placeholder="Pick-up Location"
         autoComplete="off"
@@ -67,10 +75,10 @@ const Typeahead: React.FC = (): JSX.Element => {
         onFocus={handleInputFocus}
       />
       {showSuggestions && (
-        <ul className="search-results">
+        <ul className="search-results" aria-label="suggestions">
           {locations &&
             locations.map((location: Location, i: any) => (
-              <li key={i}>
+              <li key={i} >
                 <button onClick={() => handleLocationClick(location)}>
                   <span
                     className={`badge ${mapPlaceTypeToBandge(

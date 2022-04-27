@@ -1,4 +1,4 @@
-import superagent, { Response, ResponseError } from 'superagent';
+import superagent, { Response } from 'superagent';
 
 export interface Location {
     placeType: string;
@@ -21,10 +21,11 @@ export interface Location {
     isPopular: boolean
 }
 
-export const getLocations = (searchTerm: string): Promise< Location[] | []> => {
+
+export const getLocations = (searchTerm: string): Promise< Location[] | null > => {
     const uri = `https://www.rentalcars.com/LocationAutocomplete.do?domain=rc.com&cor=gb&preflang=en&term=${searchTerm}`;
     return superagent
         .get(uri)
         .then((res: Response) => res.body.results.docs)
-        .catch((err: ResponseError) => console.log(err))
+        .catch(() => null)
 }

@@ -5,7 +5,7 @@ const Content: React.FC = (): JSX.Element => {
   return (
     <div className="hero-container">
       <div className="hero-container-gradient">
-        <div className="container">
+        <div className="content">
           <h1>Car Hire – Search, Compare & Save</h1>
           <Typeahead />
         </div>

@@ -10,7 +10,10 @@ export interface Props {
     footerLinks: FooterLink[];
 }
 
-const Footer: React.FC<Props> = ({ footerLinks }): JSX.Element => {
+const Footer: React.FC<Props> = ({ footerLinks }): JSX.Element|null => {
+    if(!footerLinks){
+        return null;
+    } 
     return (
         <footer>
             <ul>
