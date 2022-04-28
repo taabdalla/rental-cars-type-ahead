@@ -21,9 +21,8 @@ export interface Location {
     isPopular: boolean
 }
 
-
-export const getLocations = (searchTerm: string): Promise< Location[] | null > => {
-    const uri = `https://www.rentalcars.com/LocationAutocomplete.do?domain=rc.com&cor=gb&preflang=en&term=${searchTerm}`;
+export const getLocations = (searchTerm: string): Promise< Location[] | [] > => {
+    const uri = `https://www.rentalcars.com/FTSAutocomplete.do?solrIndex=fts_en&solrRows=6&solrTerm=${searchTerm}`;
     return superagent
         .get(uri)
         .then((res: Response) => res.body.results.docs)

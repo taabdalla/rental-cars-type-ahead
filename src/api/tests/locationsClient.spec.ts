@@ -7,8 +7,8 @@ describe('getLocations', () => {
 
     it('should return 200 correctly', async () => {
         nock(APA_URL)
-            .get('/LocationAutocomplete.do')
-            .query({ domain:'rc.com',cor:'gb',preflang:'en',term:'london'})
+            .get('/FTSAutocomplete.do')
+            .query({ solrIndex:'fts_en',solrRows:6,solrTerm:'london'})
             .reply(200, MOCK_API_RESPONSE);
 
         const res = await getLocations('london');

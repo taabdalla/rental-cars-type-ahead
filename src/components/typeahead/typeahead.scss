@@ -36,6 +36,9 @@
     left: 0;
     top: 72px;
     margin: 0;
+    .active{
+        background-color: rgba(18,115,196,.06);
+    }
     li:hover{
         background-color: rgba(18,115,196,.06);
     }
@@ -65,6 +68,10 @@
         }
         .district{
             background-color:$brandGreen;
+        }
+        .region{
+            background-color:$bandLightYellow;
+            color:$dark;
         }
         div{
             margin-left:$grid-gutter;
