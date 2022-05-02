@@ -1,6 +1,7 @@
 import superagent, { Response } from 'superagent';
 
 export interface Location {
+    //placeType maybe enum
     placeType: string;
     placeKey: string;
     locationId: string;

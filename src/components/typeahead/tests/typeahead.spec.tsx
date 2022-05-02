@@ -1,5 +1,5 @@
 import React from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import Typeahead from '../Typeahead';
 import * as LocationsClient from '../../../api/locationsClient';
 import { MOCK_API_LOCATIONS } from '../../../mocks/mockResponse';
@@ -18,7 +18,9 @@ describe('<Typeahead/>', () => {
         render(<Typeahead />);
         const seachInput = screen.getByPlaceholderText('Pick-up Location');
         
-        fireEvent.change(seachInput, { target: { value: 'l' } });
+        act(() => {
+            fireEvent.change(seachInput, { target: { value: 'l' } });
+        });
    
         expect(getLocationsMock).toBeCalledTimes(0);
 
@@ -28,9 +30,11 @@ describe('<Typeahead/>', () => {
         render(<Typeahead />);
         
         const seachInput = screen.getByPlaceholderText('Pick-up Location');
-        fireEvent.change(seachInput, { target: { value: 'lo' } });
-        expect(getLocationsMock).toBeCalledTimes(1);
-        expect(getLocationsMock).toBeCalledWith('lo');
+        act(() => {
+            fireEvent.change(seachInput, { target: { value: 'lo' } });
+        });
+        await waitFor(() => expect(getLocationsMock).toBeCalledTimes(1));
+        await waitFor(() => expect(getLocationsMock).toBeCalledWith('lo'));
         await waitFor(() => expect(screen.getAllByRole('list').length).toEqual(1));
 
     });
@@ -40,11 +44,13 @@ describe('<Typeahead/>', () => {
         
         const seachInput = screen.getByPlaceholderText('Pick-up Location');
        
+        act(() => {
             fireEvent.change(seachInput, { target: { value: 'lon' } });
+        });
        
 
-        expect(getLocationsMock).toBeCalledTimes(1);
-        expect(getLocationsMock).toBeCalledWith('lon');
+        await waitFor(() => expect(getLocationsMock).toBeCalledTimes(1));
+        await waitFor(() => expect(getLocationsMock).toBeCalledWith('lon'));
         
         await waitFor(() => expect(screen.getAllByRole('listitem').length).toEqual(6));
         ;
